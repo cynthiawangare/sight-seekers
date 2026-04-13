@@ -1,0 +1,65 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Users: read own, admin reads all
+    match /users/{userId} {
+      allow read: if request.auth.uid == userId
+                  || request.auth.token.admin == true;
+      allow create: if request.auth.uid == userId;
+      allow update: if request.auth.uid == userId
+                    || request.auth.token.admin == true;
+      allow delete: if request.auth.token.admin == true;
+    }
+
+    // Packages: anyone can read, only admin writes
+    match /packages/{packageId} {
+      allow read: if true;
+      allow write: if request.auth.token.admin == true;
+
+      match /itinerary/{dayId} {
+        allow read: if true;
+        allow write: if request.auth.token.admin == true;
+      }
+    }
+
+    // Bookings: user reads own, admin reads all
+    match /bookings/{bookingId} {
+      allow read: if request.auth.uid == resource.data.user_id
+                  || request.auth.token.admin == true;
+      allow create: if request.auth != null;
+      allow update: if request.auth.token.admin == true;
+    }
+
+    // Payments: user reads own, admin reads all
+    match /payments/{paymentId} {
+      allow read: if request.auth.uid == resource.data.user_id
+                  || request.auth.token.admin == true;
+      allow create: if request.auth != null;
+      allow update: if request.auth.token.admin == true;
+    }
+
+    // Enquiries: anyone can create, only admin reads/updates
+    match /enquiries/{id} {
+      allow create: if true;
+      allow read, update: if request.auth.token.admin == true;
+      allow delete: if request.auth.token.admin == true;
+    }
+
+    // Cancellations: anyone can create, only admin reads/updates
+    match /cancellations/{id} {
+      allow create: if true;
+      allow read, update: if request.auth.token.admin == true;
+      allow delete: if request.auth.token.admin == true;
+    }
+
+    // Reviews: anyone can read (filtering by is_visible done in app code)
+    match /reviews/{reviewId} {
+      allow read: if true;
+      allow create: if request.auth != null;
+      allow update: if request.auth.uid == resource.data.user_id
+                    || request.auth.token.admin == true;
+      allow delete: if request.auth.token.admin == true;
+    }
+  }
+}

@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design Tokens ─────────────────────────────────── */
+:root {
+  --ivory: #FAF8F3;
+  --charcoal: #1C1917;
+  --earth: #92400E;
+  --gold: #D97706;
+  --sage: #4A7C59;
+  --dusk: #7C3D12;
+  --mist: #F5F0E8;
+  --night: #0C1A12;
+  --stone: #78716C;
+  --cream: #FFFBF0;
+
+  /* Legacy fallbacks */
+  --blue-primary: #1A5276;
+  --blue-light: #2E86C1;
+  --brown-primary: #92400E;
+  --brown-light: #A0724A;
+  --white: #FAFAFA;
+  --gray-light: #F2F3F4;
+  --gray-mid: #BDC3C7;
+
+  /* ─── Admin Design System ────────────────────────── */
+  --admin-bg: #0F1117;
+  --admin-sidebar: #1A1D27;
+  --admin-card: #1E2130;
+  --admin-border: #2A2D3E;
+  --admin-text: #E2E8F0;
+  --admin-muted: #64748B;
+  --admin-accent: #6366F1;
+  --admin-green: #10B981;
+  --admin-gold: #F59E0B;
+  --admin-red: #EF4444;
+  --admin-blue: #3B82F6;
+}
+
+/* ─── Base Reset ────────────────────────────────────── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; overflow-x: hidden; }
+
+body {
+  background: var(--ivory);
+  font-family: 'Outfit', system-ui, sans-serif;
+  color: var(--charcoal);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; }
+
+img { max-width: 100%; display: block; }
+
+/* ─── Layout ────────────────────────────────────────── */
+.section { padding: 100px 0; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
+@media (max-width: 768px) { .container { padding: 0 24px; } }
+
+/* ─── Buttons ───────────────────────────────────────── */
+.btn-dark {
+  background: var(--charcoal);
+  color: white;
+  border: none;
+  border-radius: 100px;
+  padding: 14px 32px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+.btn-dark:hover { background: #333; transform: translateY(-2px); }
+
+.btn-earth {
+  background: var(--earth);
+  color: white;
+  border-radius: 100px;
+  padding: 14px 32px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+.btn-earth:hover { background: var(--dusk); transform: translateY(-2px); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--charcoal);
+  border: 1.5px solid var(--charcoal);
+  border-radius: 100px;
+  padding: 13px 32px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+.btn-outline:hover { background: var(--charcoal); color: white; }
+
+.btn-outline-white {
+  background: transparent;
+  color: white;
+  border: 1.5px solid rgba(255,255,255,0.6);
+  border-radius: 100px;
+  padding: 13px 32px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-outline-white:hover { background: rgba(255,255,255,0.15); border-color: white; }
+
+/* ─── Typography helpers ────────────────────────────── */
+.font-serif   { font-family: 'Playfair Display', serif; }
+.font-hand    { font-family: 'Caveat', cursive; }
+.eyebrow {
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* ─── Cards ─────────────────────────────────────────── */
+.pkg-card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.pkg-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.16);
+}
+
+.float-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  position: absolute;
+}
+
+.sticky-note {
+  background: #FEF08A;
+  font-family: 'Caveat', cursive;
+  border-radius: 4px;
+  box-shadow: 2px 4px 16px rgba(0,0,0,0.2);
+}
+
+/* ─── Animations ────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: rotate(var(--r, 0deg)) translateY(0); }
+  50%       { transform: rotate(var(--r, 0deg)) translateY(-14px); }
+}
+
+@keyframes scrollLeft {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes imgCrossfade {
+  0%, 100% { opacity: 0; }
+  8%, 92%  { opacity: 1; }
+}
+
+.animate-float      { animation: float 5s ease-in-out infinite; }
+.animate-scroll     { animation: scrollLeft 30s linear infinite; }
+.animate-fade-in    { animation: fadeIn 0.7s ease both; }
+.strip-track:hover  { animation-play-state: paused; }
+
+/* ─── Misc ──────────────────────────────────────────── */
+.navbar-blur {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.section-heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
+/* DatePicker inputs */
+.react-datepicker-wrapper,
+.react-datepicker__input-container { display: block; width: 100%; }
+.dp-input {
+  width: 100%;
+  border: 1.5px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-family: 'Outfit', sans-serif;
+  color: var(--charcoal);
+  background: #fff;
+  outline: none;
+}
+.dp-input:focus { border-color: var(--gold); }
+
+/* Mobile section spacing */
+@media (max-width: 768px) {
+  .section { padding: 60px 0; }
+}

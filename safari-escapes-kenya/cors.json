@@ -1,0 +1,7 @@
+[
+  {
+    "origin": ["http://localhost:5173", "https://sightseekers-c3892.web.app", "https://sightseekers-c3892.firebaseapp.com"],
+    "method": ["GET", "POST", "PUT", "DELETE"],
+    "maxAgeSeconds": 3600
+  }
+]

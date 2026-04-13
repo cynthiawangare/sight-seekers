@@ -1,0 +1,12 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "storage": [
+    {
+      "bucket": "sightseekers-c3892.firebasestorage.app",
+      "rules": "storage.rules"
+    }
+  ]
+}
