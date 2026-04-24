@@ -153,7 +153,7 @@ export default function PackagesPage() {
 
       {/* Filter bar — floats over the hero bottom */}
       <div className="container" style={{ position: 'relative', zIndex: 10 }}>
-        <div style={{
+        <div className="pkg-filterbar" style={{
           background: 'white', borderRadius: 16, padding: '20px 32px',
           marginTop: -40, boxShadow: '0 8px 40px rgba(0,0,0,0.12)',
           display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap',
@@ -227,11 +227,16 @@ export default function PackagesPage() {
       </section>
 
       <style>{`
-        @media (max-width: 900px) {
+        @media (max-width: 1024px) {
           .pkg-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
         @media (max-width: 480px) {
           .pkg-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 640px) {
+          .pkg-filterbar { padding: 16px !important; flex-direction: column !important; }
+          .pkg-filterbar input, .pkg-filterbar select { width: 100% !important; }
+          .pkg-filterbar button { width: 100% !important; margin-left: 0 !important; }
         }
       `}</style>
     </div>

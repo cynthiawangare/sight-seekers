@@ -155,7 +155,7 @@ export default function Footer() {
             fontFamily: "'Playfair Display', serif", fontSize: 24,
             color: 'white', marginBottom: 24,
           }}>{t('footer_newsletter_h')}</h3>
-          <div style={{ display: 'flex', gap: 12, justifyContent: 'center', maxWidth: 480, margin: '0 auto' }}>
+          <div className="footer-newsletter-form" style={{ display: 'flex', gap: 12, justifyContent: 'center', maxWidth: 480, margin: '0 auto' }}>
             <input
               type="email"
               value={email}
@@ -201,6 +201,9 @@ export default function Footer() {
         }
         @media (max-width: 480px) {
           .footer-grid { grid-template-columns: 1fr !important; }
+          .footer-newsletter-form { flex-direction: column !important; }
+          .footer-newsletter-form input { width: 100% !important; }
+          .footer-newsletter-form button { width: 100% !important; justify-content: center; }
         }
       `}</style>
     </footer>

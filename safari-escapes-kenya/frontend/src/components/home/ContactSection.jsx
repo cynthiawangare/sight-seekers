@@ -139,12 +139,12 @@ export default function ContactSection() {
 
       <style>{`
         @media (max-width: 1000px) {
-          .contact-grid { grid-template-columns: repeat(5, 1fr) !important; }
+          .contact-grid { grid-template-columns: repeat(4, 1fr) !important; }
         }
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
           .contact-grid { grid-template-columns: repeat(3, 1fr) !important; }
         }
-        @media (max-width: 400px) {
+        @media (max-width: 480px) {
           .contact-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
       `}</style>

@@ -250,7 +250,7 @@ export default function Navbar() {
         boxShadow: scrolled ? '0 2px 20px rgba(0,0,0,0.08)' : 'none',
         transition: 'box-shadow 0.3s ease',
       }}>
-        <div style={{
+        <div className="nav-inner" style={{
           maxWidth: 1200, margin: '0 auto', padding: '0 48px',
           height: '100%', display: 'flex', alignItems: 'center',
           justifyContent: 'space-between',
@@ -371,6 +371,7 @@ export default function Navbar() {
         @media (max-width: 768px) {
           .nav-center, .nav-right { display: none !important; }
           .nav-hamburger { display: flex !important; }
+          .nav-inner { padding: 0 16px !important; }
         }
       `}</style>
     </>

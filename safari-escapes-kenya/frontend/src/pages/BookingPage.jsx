@@ -762,17 +762,19 @@ export default function BookingPage() {
           70% { transform: scale(1.1); }
           100% { transform: scale(1); opacity: 1; }
         }
-        @media (max-width: 900px) {
+        @media (max-width: 1024px) {
           .booking-grid { grid-template-columns: 1fr !important; }
           .summary-col { position: static !important; order: -1; }
           .summary-img { height: 160px !important; }
+          .booking-container { padding: 32px 24px 60px !important; }
         }
         @media (max-width: 768px) {
-          .booking-container { padding: 24px 20px 60px !important; }
+          .booking-container { padding: 20px 16px 48px !important; }
+          .booking-card { padding: 24px 20px !important; }
         }
         @media (max-width: 480px) {
-          .booking-card { padding: 24px !important; }
-          .booking-card h2 { font-size: 24px !important; }
+          .booking-card { padding: 20px 16px !important; }
+          .booking-card h2 { font-size: 22px !important; }
           .step-label { display: none; }
           .accom-grid { grid-template-columns: 1fr !important; }
           .confirm-actions { flex-direction: column; }

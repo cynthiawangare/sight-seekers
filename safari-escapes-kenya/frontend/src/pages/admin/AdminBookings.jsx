@@ -157,7 +157,7 @@ export default function AdminBookings() {
   return (
     <div style={{ padding: 32 }}>
       {/* Stats row */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20, marginBottom: 28 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 20, marginBottom: 28 }}>
         <StatCard icon={Clock} iconBg="rgba(245,158,11,0.15)" iconColor="#F59E0B" label="Pending" value={stats.pending} />
         <StatCard icon={AlertCircle} iconBg="rgba(59,130,246,0.15)" iconColor="#3B82F6" label="Confirmed" value={stats.confirmed} />
         <StatCard icon={CheckCircle} iconBg="rgba(16,185,129,0.15)" iconColor="#10B981" label="Completed" value={stats.completed} />

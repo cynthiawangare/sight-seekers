@@ -45,7 +45,7 @@ export default function HeroBanner() {
   return (
     <div style={{ position: 'relative', overflow: 'hidden' }}>
       {/* Main hero */}
-      <section style={{ position: 'relative', height: '100vh', minHeight: 700, overflow: 'hidden' }}>
+      <section style={{ position: 'relative', height: '100vh', minHeight: 600, overflow: 'hidden' }}>
         {/* Crossfading images */}
         {heroImages.map((src, i) => (
           <img key={src} src={src} alt="" style={{
@@ -61,9 +61,9 @@ export default function HeroBanner() {
           background: 'linear-gradient(to bottom, rgba(12,26,18,0.3) 0%, rgba(12,26,18,0.5) 60%, rgba(12,26,18,0.85) 100%)',
         }} />
 
-        {/* Floating badges */}
+        {/* Floating badges — hidden on mobile */}
         {FLOATING_BADGES.map((b, i) => (
-          <div key={i} style={{
+          <div key={i} className="hero-badge" style={{
             position: 'absolute',
             top: b.top, left: b.left, right: b.right, bottom: b.bottom,
             background: b.bg, borderRadius: 16, padding: '12px 16px',
@@ -112,6 +112,7 @@ export default function HeroBanner() {
             display: 'grid', gridTemplateColumns: '1fr 1fr 1fr auto',
             gap: 16, alignItems: 'end',
             boxShadow: '0 32px 80px rgba(0,0,0,0.25)',
+            boxSizing: 'border-box',
           }}
             className="hero-form"
           >
@@ -190,6 +191,26 @@ export default function HeroBanner() {
           ))}
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .hero-badge { display: none !important; }
+          .hero-form {
+            grid-template-columns: 1fr 1fr !important;
+            padding: 20px 16px !important;
+            gap: 12px !important;
+          }
+          .hero-form button[type="submit"] {
+            grid-column: 1 / -1;
+            width: 100%;
+          }
+        }
+        @media (max-width: 480px) {
+          .hero-form {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }
