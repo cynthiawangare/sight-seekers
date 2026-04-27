@@ -79,8 +79,8 @@ function PackageCard({ pkg }) {
             </button>
             <button className="btn-earth"
               style={{ flex: 1, justifyContent: 'center', padding: '11px 16px', fontSize: 13 }}
-              onClick={(e) => { e.stopPropagation(); navigate(`/packages/${pkg.slug}`); }}>
-              {t('pkgsec_book')}
+              onClick={(e) => { e.stopPropagation(); navigate(`/enquiry`); }}>
+              Enquiries
             </button>
           </div>
         </div>
