@@ -243,7 +243,7 @@ export default function Navbar() {
   return (
     <>
       <nav style={{
-        position: 'sticky', top: 0, zIndex: 100, height: 72,
+        position: 'sticky', top: 0, zIndex: 100, height: 56,
         background: 'rgba(250,248,243,0.92)',
         backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)',
         borderBottom: '1px solid rgba(0,0,0,0.06)',
@@ -257,7 +257,7 @@ export default function Navbar() {
         }}>
           {/* Logo */}
           <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-            <img src="https://firebasestorage.googleapis.com/v0/b/sightseekers-c3892.firebasestorage.app/o/Weixin%20Image_20260327155559_16_6.png?alt=media&token=fdd3d494-f42e-49aa-8c11-cd7d4929780e" alt="Sight Seekers" style={{ height: 44, width: 'auto', objectFit: 'contain' }} />
+            <img src="https://firebasestorage.googleapis.com/v0/b/sightseekers-c3892.firebasestorage.app/o/Weixin%20Image_20260327155559_16_6.png?alt=media&token=fdd3d494-f42e-49aa-8c11-cd7d4929780e" alt="Sight Seekers" style={{ height: 36, width: 'auto', objectFit: 'contain' }} />
           </Link>
 
           {/* Center nav — desktop */}
@@ -309,7 +309,7 @@ export default function Navbar() {
       {/* Mobile menu */}
       {open && (
         <div style={{
-          position: 'fixed', top: 72, left: 0, right: 0,
+          position: 'fixed', top: 56, left: 0, right: 0,
           background: 'rgba(250,248,243,0.98)', backdropFilter: 'blur(16px)',
           borderBottom: '1px solid rgba(0,0,0,0.08)',
           padding: '28px 24px', zIndex: 99,
