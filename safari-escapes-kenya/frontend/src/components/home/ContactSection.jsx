@@ -25,10 +25,6 @@ const CONTACTS = [
     platform: 'Douyin', handle: '@sightseekers', color: '#000000', url: '#', emoji: '📱',
   },
   {
-    platform: 'RedNote', name: 'Sight Seeker', handle: '@sightseeker', color: '#FF2442',
-    url: '#', emoji: '📝',
-  },
-  {
     platform: 'TikTok', handle: '@JimmySS', color: '#000000',
     url: 'https://www.tiktok.com/@JimmySS',
     svgIcon: (
