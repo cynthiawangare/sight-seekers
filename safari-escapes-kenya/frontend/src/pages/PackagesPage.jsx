@@ -128,7 +128,7 @@ export default function PackagesPage() {
         <img
           src="https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=1400&h=400&fit=crop"
           alt="Giraffe and savanna"
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center center' }}
         />
         <div style={{
           position: 'absolute', inset: 0,

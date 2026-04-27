@@ -72,7 +72,7 @@ export default function BentoGallery() {
         <div className="bento-mobile" style={{ display: 'none', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
           {cells.map(({ src, label }) => (
             <div key={label} style={{ position: 'relative', borderRadius: 16, overflow: 'hidden', height: 160 }}>
-              <img src={src} alt={label} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={src} alt={label} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center center' }} />
               <div style={{
                 position: 'absolute', bottom: 8, left: 8,
                 background: 'rgba(255,255,255,0.88)', backdropFilter: 'blur(6px)',

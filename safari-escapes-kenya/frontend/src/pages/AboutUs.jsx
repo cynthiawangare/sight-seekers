@@ -28,7 +28,7 @@ export default function AboutUs() {
         <img
           src="https://firebasestorage.googleapis.com/v0/b/sightseekers-c3892.firebasestorage.app/o/Weixin%20Image_20260327173816_25_6.jpg?alt=media&token=feedfd07-f1d1-4c8a-a27c-7d73f8ce1e5d"
           alt="Safari landscape"
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center center' }}
         />
         <div style={{
           position: 'absolute', inset: 0,
@@ -97,7 +97,7 @@ export default function AboutUs() {
               <img
                 src="https://firebasestorage.googleapis.com/v0/b/sightseekers-c3892.firebasestorage.app/o/Weixin%20Image_20260327191536_131_6.jpg?alt=media&token=dadfac6b-9783-4697-b5e5-294ef62c1205"
                 alt="Safari in Kenya"
-                style={{ width: '100%', borderRadius: 24, objectFit: 'cover' }}
+                style={{ width: '100%', borderRadius: 24, objectFit: 'cover', objectPosition: 'center center' }}
               />
             </div>
           </div>

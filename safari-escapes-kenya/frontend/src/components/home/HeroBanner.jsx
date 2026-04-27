@@ -50,7 +50,8 @@ export default function HeroBanner() {
         {heroImages.map((src, i) => (
           <img key={src} src={src} alt="" style={{
             position: 'absolute', inset: 0, width: '100%', height: '100%',
-            objectFit: 'cover', transition: 'opacity 1.2s ease',
+            objectFit: 'cover', objectPosition: 'center center',
+            transition: 'opacity 1.2s ease',
             opacity: i === current ? 1 : 0, zIndex: 0,
           }} />
         ))}

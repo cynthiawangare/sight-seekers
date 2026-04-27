@@ -118,7 +118,7 @@ export default function PackageDetail() {
         <img
           src={heroImg}
           alt={pkg.name}
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center center' }}
           onError={(e) => { e.target.src = FALLBACK_IMG; e.target.onerror = null; }}
         />
         <div style={{
